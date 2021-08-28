@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LoginAndRegister.Views.LoginPage"
+             BackgroundColor="White">
+    <Grid 
+        Padding="30" 
+        RowDefinitions="Auto, Auto, Auto, Auto"
+        ColumnDefinitions="*,auto,*"
+        HorizontalOptions="Center"
+        Margin="0,50,0,30"
+        RowSpacing="25"
+        VerticalOptions="Center">
+        <Image Grid.Row="0"  Grid.Column="1" HorizontalOptions="Center" WidthRequest="300" Source="logo.jpg"/>
+
+        <Entry x:Name="usernameEntry" 
+               Text="{Binding User.UserName}"
+               Grid.Row="1"
+               Grid.Column="0"
+               Grid.ColumnSpan="3"
+               Placeholder="Usuario"  
+               PlaceholderColor="Black" HeightRequest="40"
+               Keyboard="Email" 
+               TextColor="Black"
+               Margin="5,0,5,0"/>
+
+        <Entry x:Name="passwordEntry" Text="{Binding User.Password}" 
+               Grid.Row="2"
+               Grid.Column="0"
+               Grid.ColumnSpan="3"
+               Placeholder="Contraseña"   
+               PlaceholderColor="Black" 
+               HeightRequest="40"   
+               IsPassword="True"  
+               TextColor="Black"
+               Margin="5,0,5,0"/>
+
+
+        <Button Command="{Binding SubmitCommand}" Text="Login" TextColor="White"  
+               Grid.Row="3"
+               Grid.Column="0"
+               Grid.ColumnSpan="3"
+               FontAttributes="Bold" FontSize="Large" 
+               HorizontalOptions="FillAndExpand"  
+               BackgroundColor="Black" 
+               />
+        <Label 
+            Grid.Row="4"
+            Grid.Column="1"
+            HorizontalOptions="Center"
+            Grid.ColumnSpan="3"
+            Text="Registro" 
+            TextColor="Blue">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer NumberOfTapsRequired="1" Command="{ Binding NavigateCommand }" />
+            </Label.GestureRecognizers>
+
+        </Label>
+
+    </Grid>
+</ContentPage>
