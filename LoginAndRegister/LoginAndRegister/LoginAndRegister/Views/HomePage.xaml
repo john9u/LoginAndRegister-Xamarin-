@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LoginAndRegister.Views.HomePage"
+             xmlns:views="clr-namespace:LoginAndRegister.Views">
+    <Grid 
+        Padding="20"
+        RowDefinitions="*,*,*"
+        ColumnDefinitions="*,*"
+        VerticalOptions="Center">
+                
+        <views:MenuView
+            Grid.Row="0"
+            Grid.Column="0"
+            HorizontalOptions="Center"
+            BindingContext="{Binding Cars}"
+        />
+        <views:MenuView
+            Grid.Row="0"
+            Grid.Column="1"
+            HorizontalOptions="Center"
+            BindingContext="{Binding Parts}"
+            />
+        <views:MenuView
+            Grid.Row="1"
+            Grid.Column="0"
+            HorizontalOptions="Center"
+            BindingContext="{Binding Contracts}"
+            />
+        <views:MenuView
+            Grid.Row="1"
+            Grid.Column="1"
+            HorizontalOptions="Center"
+            BindingContext="{Binding Contacts}"
+            />
+        <views:MenuView
+            Grid.Row="2"
+            Grid.Column="0"
+            HorizontalOptions="Center"
+            BindingContext="{Binding Promotions}"
+            />
+        <views:MenuView
+            Grid.Row="2"
+            Grid.Column="1"
+            HorizontalOptions="Center"
+            BindingContext="{Binding Garages}"
+            />
+    </Grid>
+</ContentPage>

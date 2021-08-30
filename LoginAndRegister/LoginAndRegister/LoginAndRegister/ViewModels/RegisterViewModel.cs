@@ -20,11 +20,7 @@ namespace LoginAndRegister.ViewModels
         {
             _alertservice = alertservice;
             SubmitCommand = new Command(OnSubmit);
-            NavigateCommand = new Command(async () =>
-            {
-                await App.Current.MainPage.Navigation.PushAsync(new RegisterPage());
-
-            });
+            
         }
 
         public Register User { get; set; } = new Register(string.Empty, string.Empty,string.Empty, string.Empty);
@@ -43,10 +39,7 @@ namespace LoginAndRegister.ViewModels
             {
                 
                 await _alertservice.Alert("Bienvenido", $"Has sido registrado {User.Name}", "OK");
-                User.Name = string.Empty;
-                User.Password = string.Empty;
-                User.RepeatPassword = string.Empty;
-                User.Email = string.Empty;
+                await App.Current.MainPage.Navigation.PushAsync(new InitialPage());
             }
         }
     }

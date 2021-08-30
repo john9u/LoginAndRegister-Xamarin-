@@ -11,7 +11,7 @@ namespace LoginAndRegister
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new LoginPage());
+            MainPage = new NavigationPage(new InitialPage());
         }
 
         protected override void OnStart()
