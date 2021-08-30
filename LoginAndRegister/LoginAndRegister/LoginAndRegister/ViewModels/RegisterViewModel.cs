@@ -39,7 +39,7 @@ namespace LoginAndRegister.ViewModels
             {
                 
                 await _alertservice.Alert("Bienvenido", $"Has sido registrado {User.Name}", "OK");
-                await App.Current.MainPage.Navigation.PushAsync(new InitialPage());
+                await App.Current.MainPage.Navigation.PopAsync();
             }
         }
     }
